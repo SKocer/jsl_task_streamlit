@@ -3,7 +3,11 @@
 import json
 import os
 
-with open('/content/4.2.8.spark_nlp_for_healthcare.json') as f:
+from google.colab import files
+
+license_keys = files.upload()
+
+with open(list(license_keys.keys())[0]) as f:
     license_keys = json.load(f)
 
 for k,v in license_keys.items(): 
